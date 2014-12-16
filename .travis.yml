@@ -13,7 +13,8 @@ before_install:
   - sudo add-apt-repository ppa:staticfloat/julianightlies -y
   - sudo apt-get update -qq -y
   - sudo apt-get install libpcre3-dev julia -y
-  - sudo apt-get install python-serial python3-serial -y
+install:
+  - pip install pyserial
 script:
   - julia -e 'Pkg.clone(pwd())'
   - julia -e 'Pkg.build("PySerial")'
